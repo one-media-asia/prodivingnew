@@ -10,6 +10,9 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleNavClick = (href: string) => {
+    // Always scroll to top when navigating
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
     if (href.startsWith('/')) {
       navigate(href);
     } else if (href.startsWith('#')) {
