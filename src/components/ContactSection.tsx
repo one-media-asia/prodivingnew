@@ -106,7 +106,7 @@ const ContactSection = () => {
               <div>
                 <h3 className="font-heading font-bold text-foreground mb-1">Location</h3>
                 <p className="text-muted-foreground">
-                  Koh Tao, Thailand
+                  Bali, Indonesia
                 </p>
               </div>
             </div>
