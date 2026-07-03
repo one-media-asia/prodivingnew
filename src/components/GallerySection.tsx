@@ -3,23 +3,23 @@ import { Card, CardContent } from "@/components/ui/card";
 const GallerySection = () => {
   const galleryImages = [
     {
-      src: "https://discoverkohtao.lovable.app/assets/turtle-CvgnzQIu.png",
-      alt: "Sea turtle swimming in Koh Tao",
+      src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      alt: "Sea turtle swimming in Bali",
       category: "Marine Life"
     },
     {
-      src: "https://discoverkohtao.lovable.app/assets/boat-B9XHPUH8.png",
+      src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       alt: "Divers on boat preparing for dive",
       category: "Diving"
     },
     {
-      src: "https://discoverkohtao.lovable.app/assets/reef-5SzZhtPP.png",
-      alt: "Colorful coral reef with tropical fish",
+      src: "https://images.unsplash.com/photo-1493558103817-58b2924bce98?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      alt: "Colorful coral reef with tropical fish in Bali",
       category: "Coral Reefs"
     },
     {
       src: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Colorful coral reef in Koh Tao",
+      alt: "Colorful coral reef in Bali",
       category: "Coral Reefs"
     },
     {
@@ -50,7 +50,7 @@ const GallerySection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-ocean-900 mb-4">Underwater Gallery</h2>
           <p className="text-xl text-ocean-700 max-w-3xl mx-auto">
-            Experience the breathtaking beauty of Koh Tao's underwater world through our photo gallery
+            Experience the breathtaking beauty of Bali's underwater world through our photo gallery
           </p>
         </div>
 

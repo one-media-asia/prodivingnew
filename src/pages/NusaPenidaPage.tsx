@@ -3,9 +3,9 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Clock, Waves, Users } from "lucide-react";
+import { CheckCircle, Clock, Waves, Users, MapPin, Thermometer } from "lucide-react";
 
-const DivemasterPage = () => {
+const NusaPenidaPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
@@ -15,71 +15,72 @@ const DivemasterPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge variant="secondary" className="mb-4">
-                Professional Course
+                Premium Dive Site
               </Badge>
               <h1 className="text-5xl font-bold text-ocean-900 mb-6">
-                PADI Divemaster
+                Nusa Penida
               </h1>
               <p className="text-xl text-ocean-700 mb-8">
-                Become a diving professional and start your career in the diving industry
+                Experience the thrill of diving with majestic manta rays and explore one of Bali's most spectacular underwater destinations. Nusa Penida is famous for manta ray cleaning stations and dramatic wall dives.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 flex-wrap">
                 <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-ocean-600" />
-                  <span className="text-ocean-700">Duration: 2-6 weeks</span>
+                  <MapPin className="w-5 h-5 text-ocean-600" />
+                  <span className="text-ocean-700">15 minutes by boat</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Waves className="w-5 h-5 text-ocean-600" />
-                  <span className="text-ocean-700">Max depth: 40m</span>
+                  <span className="text-ocean-700">Depth: 15-40m</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-ocean-600" />
-                  <span className="text-ocean-700">Contact us for Bali pricing</span>
+                  <Thermometer className="w-5 h-5 text-ocean-600" />
+                  <span className="text-ocean-700">Temperature: 24-28°C</span>
                 </div>
               </div>
               <Button size="lg" className="bg-ocean-600 hover:bg-ocean-700">
-                Book This Course
+                Book Your Dive Today
               </Button>
             </div>
           </div>
         </section>
 
-        {/* Course Details */}
+        {/* Dive Site Details */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-ocean-900 mb-8 text-center">
-                Course Overview
+                Dive Site Overview
               </h2>
+
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-green-600" />
-                      What You'll Learn
+                      What You'll See
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Leadership training and team management</span>
+                        <span>Manta rays (especially during dry season)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Teaching assistance and student supervision</span>
+                        <span>Vibrant coral gardens and reef walls</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Dive guide skills and site management</span>
+                        <span>Tropical fish species in abundance</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Professional certification preparation</span>
+                        <span>Sea turtles and reef sharks</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Emergency response and safety procedures</span>
+                        <span>Dramatic underwater canyons and channels</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -87,29 +88,29 @@ const DivemasterPage = () => {
 
                 <Card>
                   <CardHeader>
-                    <CardTitle>Course Includes</CardTitle>
+                    <CardTitle>Best Dive Spots</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Comprehensive leadership training</span>
+                        <span><strong>Manta Point:</strong> Premier manta ray encounter site</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Teaching assistance experience</span>
+                        <span><strong>Crystal Bay:</strong> Deep diving & pelagic life</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Dive guide certification skills</span>
+                        <span><strong>Ped Ped:</strong> Shallow reef diving</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Professional PADI certification</span>
+                        <span><strong>Gunboat Wreck:</strong> Historic wreck exploration</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Unlimited diving during the course</span>
+                        <span><strong>Sardine Reef:</strong> Abundant marine life</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -118,25 +119,60 @@ const DivemasterPage = () => {
 
               <Card className="mb-8">
                 <CardHeader>
-                  <CardTitle>Prerequisites</CardTitle>
+                  <CardTitle>Dive Information</CardTitle>
                   <CardDescription>
-                    To enroll in the PADI Divemaster course, you must meet the following requirements:
+                    Essential details for planning your Nusa Penida diving adventure
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-ocean-900 mb-2">Experience Level:</h4>
+                      <p className="text-ocean-700">Intermediate to Advanced (varying by site)</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-ocean-900 mb-2">Best Time to Visit:</h4>
+                      <p className="text-ocean-700">July to October for manta rays and calm conditions</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-ocean-900 mb-2">Visibility:</h4>
+                      <p className="text-ocean-700">15-30 meters depending on season</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-ocean-900 mb-2">Current:</h4>
+                      <p className="text-ocean-700">Can be strong at times - requires good buoyancy control</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-8 bg-blue-50 border-blue-200">
+                <CardHeader>
+                  <CardTitle className="text-blue-900">Why Dive Nusa Penida?</CardTitle>
+                </CardHeader>
+                <CardContent className="text-blue-800">
                   <ul className="space-y-2">
-                    <li>• Be at least 18 years old</li>
-                    <li>• Hold a PADI Rescue Diver certification or equivalent</li>
-                    <li>• Have logged at least 60 dives</li>
-                    <li>• Complete a medical questionnaire</li>
-                    <li>• Demonstrate good physical fitness for diving</li>
+                    <li>• <strong>Manta Ray Capital:</strong> Highest concentration of manta rays in Bali</li>
+                    <li>• <strong>Cleaning Stations:</strong> Visit world-famous manta cleaning stations and dramatic surge channels</li>
+                    <li>• <strong>Pelagic Encounters:</strong> Consistent shark, turtle, and ray sightings</li>
+                    <li>• <strong>Bold Currents:</strong> Powerful conditions for advanced divers and unforgettable experiences</li>
+                    <li>• <strong>Iconic Bali Dive Site:</strong> One of the most sought-after dive destinations in Indonesia</li>
                   </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-8 bg-slate-50 border-slate-200">
+                <CardHeader>
+                  <CardTitle>Bali Dive Careers Programs</CardTitle>
+                </CardHeader>
+                <CardContent className="text-slate-800">
+                  <p>We offer Bali-based PADI programs and professional internships designed for divers who want to train and explore the best of Nusa Penida's underwater world.</p>
                 </CardContent>
               </Card>
 
               <div className="text-center">
                 <Button size="lg" className="bg-ocean-600 hover:bg-ocean-700">
-                  Contact Us to Enroll
+                  Dive Nusa Penida with Us
                 </Button>
               </div>
             </div>
@@ -148,4 +184,4 @@ const DivemasterPage = () => {
   );
 };
 
-export default DivemasterPage;
+export default NusaPenidaPage;

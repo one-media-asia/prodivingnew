@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Clock, Waves, Users } from "lucide-react";
 
-const DivemasterPage = () => {
+const DeepDivingPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
@@ -15,18 +15,18 @@ const DivemasterPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge variant="secondary" className="mb-4">
-                Professional Course
+                Specialty Course
               </Badge>
               <h1 className="text-5xl font-bold text-ocean-900 mb-6">
-                PADI Divemaster
+                PADI Deep Diving Specialty
               </h1>
               <p className="text-xl text-ocean-700 mb-8">
-                Become a diving professional and start your career in the diving industry
+                Safely explore deeper dive sites and discover underwater wonders beyond 40 meters
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-ocean-600" />
-                  <span className="text-ocean-700">Duration: 2-6 weeks</span>
+                  <span className="text-ocean-700">Duration: 2 days</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Waves className="w-5 h-5 text-ocean-600" />
@@ -38,7 +38,7 @@ const DivemasterPage = () => {
                 </div>
               </div>
               <Button size="lg" className="bg-ocean-600 hover:bg-ocean-700">
-                Book This Course
+                Go Deeper
               </Button>
             </div>
           </div>
@@ -63,23 +63,23 @@ const DivemasterPage = () => {
                     <ul className="space-y-3">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Leadership training and team management</span>
+                        <span>Nitrogen narcosis effects and management</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Teaching assistance and student supervision</span>
+                        <span>Deep diving hazards and risk management</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Dive guide skills and site management</span>
+                        <span>Dive planning at depth with modified tables</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Professional certification preparation</span>
+                        <span>Advanced buoyancy and descent control</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Emergency response and safety procedures</span>
+                        <span>Emergency procedures at depth</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -93,23 +93,23 @@ const DivemasterPage = () => {
                     <ul className="space-y-3">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Comprehensive leadership training</span>
+                        <span>2 days of comprehensive instruction</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Teaching assistance experience</span>
+                        <span>4 deep dives to 40 meters</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Dive guide certification skills</span>
+                        <span>Classroom and confined water training</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Professional PADI certification</span>
+                        <span>PADI Deep Diving Specialty card</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Unlimited diving during the course</span>
+                        <span>All equipment provided</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -120,23 +120,38 @@ const DivemasterPage = () => {
                 <CardHeader>
                   <CardTitle>Prerequisites</CardTitle>
                   <CardDescription>
-                    To enroll in the PADI Divemaster course, you must meet the following requirements:
+                    To enroll in the PADI Deep Diving Specialty course, you must meet the following requirements:
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>• Be at least 18 years old</li>
-                    <li>• Hold a PADI Rescue Diver certification or equivalent</li>
-                    <li>• Have logged at least 60 dives</li>
+                    <li>• Be at least 12 years old</li>
+                    <li>• Hold a valid PADI Advanced Open Water Diver certification or equivalent</li>
+                    <li>• Have logged at least 30 dives</li>
+                    <li>• Be comfortable diving to 40 meters</li>
                     <li>• Complete a medical questionnaire</li>
-                    <li>• Demonstrate good physical fitness for diving</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-8 bg-blue-50 border-blue-200">
+                <CardHeader>
+                  <CardTitle className="text-blue-900">Deep Diving in Bali</CardTitle>
+                </CardHeader>
+                <CardContent className="text-blue-800">
+                  <ul className="space-y-2">
+                    <li>• <strong>Thermocline dives:</strong> Experience the dramatic temperature transitions</li>
+                    <li>• <strong>Deep reefs:</strong> Discover pristine coral gardens untouched by recreational divers</li>
+                    <li>• <strong>Pelagic encounters:</strong> Spot sharks, rays, and other large marine life</li>
+                    <li>• <strong>Advanced marine life:</strong> Unique species found only at greater depths</li>
+                    <li>• <strong>Exploration:</strong> Visit iconic deep dive sites like Crystal Bay and Blue Lagoon</li>
                   </ul>
                 </CardContent>
               </Card>
 
               <div className="text-center">
                 <Button size="lg" className="bg-ocean-600 hover:bg-ocean-700">
-                  Contact Us to Enroll
+                  Explore the Depths
                 </Button>
               </div>
             </div>
@@ -148,4 +163,4 @@ const DivemasterPage = () => {
   );
 };
 
-export default DivemasterPage;
+export default DeepDivingPage;

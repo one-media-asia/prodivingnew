@@ -50,7 +50,7 @@ const LiveChat = () => {
           <div className="p-4 min-h-[200px] bg-secondary/30">
             <div className="bg-card rounded-lg p-3 shadow-sm mb-4">
               <p className="text-sm text-foreground">
-                👋 Hello! Welcome to ProDiving Asia. How can we help you today?
+                👋 Hello! Welcome to Indo Pro Careers. How can we help you today?
               </p>
               <p className="text-xs text-muted-foreground mt-2">
                 Ask about rooms, tours, or diving!

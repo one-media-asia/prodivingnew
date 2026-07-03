@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Clock, Waves, Users } from "lucide-react";
 
-const DivemasterPage = () => {
+const WreckDivingPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
@@ -15,18 +15,18 @@ const DivemasterPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge variant="secondary" className="mb-4">
-                Professional Course
+                Specialty Course
               </Badge>
               <h1 className="text-5xl font-bold text-ocean-900 mb-6">
-                PADI Divemaster
+                PADI Wreck Diving Specialty
               </h1>
               <p className="text-xl text-ocean-700 mb-8">
-                Become a diving professional and start your career in the diving industry
+                Safely explore shipwrecks and underwater structures - a unique diving adventure
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-ocean-600" />
-                  <span className="text-ocean-700">Duration: 2-6 weeks</span>
+                  <span className="text-ocean-700">Duration: 2 days</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Waves className="w-5 h-5 text-ocean-600" />
@@ -38,7 +38,7 @@ const DivemasterPage = () => {
                 </div>
               </div>
               <Button size="lg" className="bg-ocean-600 hover:bg-ocean-700">
-                Book This Course
+                Explore Wrecks
               </Button>
             </div>
           </div>
@@ -63,23 +63,23 @@ const DivemasterPage = () => {
                     <ul className="space-y-3">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Leadership training and team management</span>
+                        <span>Wreck diving safety and hazard awareness</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Teaching assistance and student supervision</span>
+                        <span>Wreck navigation and orientation techniques</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Dive guide skills and site management</span>
+                        <span>Understanding wreck structure and layout</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Professional certification preparation</span>
+                        <span>Penetration guidelines and procedures</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Emergency response and safety procedures</span>
+                        <span>Equipment specialized for wreck diving</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -93,23 +93,23 @@ const DivemasterPage = () => {
                     <ul className="space-y-3">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Comprehensive leadership training</span>
+                        <span>2 days of wreck-specific instruction</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Teaching assistance experience</span>
+                        <span>4 wreck dives on real wrecks</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Dive guide certification skills</span>
+                        <span>Wreck navigation training</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Professional PADI certification</span>
+                        <span>PADI Wreck Diving Specialty card</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Unlimited diving during the course</span>
+                        <span>All specialized equipment provided</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -120,23 +120,38 @@ const DivemasterPage = () => {
                 <CardHeader>
                   <CardTitle>Prerequisites</CardTitle>
                   <CardDescription>
-                    To enroll in the PADI Divemaster course, you must meet the following requirements:
+                    To enroll in the PADI Wreck Diving Specialty course, you must meet the following requirements:
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>• Be at least 18 years old</li>
-                    <li>• Hold a PADI Rescue Diver certification or equivalent</li>
-                    <li>• Have logged at least 60 dives</li>
+                    <li>• Be at least 12 years old</li>
+                    <li>• Hold a valid PADI Open Water Diver certification or equivalent</li>
+                    <li>• Have logged at least 20 dives</li>
+                    <li>• Be comfortable with navigation skills</li>
                     <li>• Complete a medical questionnaire</li>
-                    <li>• Demonstrate good physical fitness for diving</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-8 bg-blue-50 border-blue-200">
+                <CardHeader>
+                  <CardTitle className="text-blue-900">Wreck Diving in Bali</CardTitle>
+                </CardHeader>
+                <CardContent className="text-blue-800">
+                  <ul className="space-y-2">
+                    <li>• <strong>USAT Liberty:</strong> Famous World War II shipwreck near Tulamben</li>
+                    <li>• <strong>Japanese patrol boats:</strong> Multiple wrecks from WWII era</li>
+                    <li>• <strong>Artificial reefs:</strong> Man-made wreck structures teeming with life</li>
+                    <li>• <strong>Rich history:</strong> Explore fascinating historical structures</li>
+                    <li>• <strong>Thriving ecosystems:</strong> Wrecks become artificial reefs with abundant marine life</li>
                   </ul>
                 </CardContent>
               </Card>
 
               <div className="text-center">
                 <Button size="lg" className="bg-ocean-600 hover:bg-ocean-700">
-                  Contact Us to Enroll
+                  Book Your Wreck Adventure
                 </Button>
               </div>
             </div>
@@ -148,4 +163,4 @@ const DivemasterPage = () => {
   );
 };
 
-export default DivemasterPage;
+export default WreckDivingPage;

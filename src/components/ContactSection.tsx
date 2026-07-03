@@ -106,7 +106,7 @@ const ContactSection = () => {
               <div>
                 <h3 className="font-heading font-bold text-foreground mb-1">Location</h3>
                 <p className="text-muted-foreground">
-                  Koh Tao, Thailand
+                  Bali, Indonesia
                 </p>
               </div>
             </div>
@@ -166,7 +166,7 @@ const ContactSection = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-tropical" />
-                  A/C available: +300 THB/night
+                  Comfortable accommodation and transport packages available
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-tropical" />

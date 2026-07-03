@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Clock, Waves, Users } from "lucide-react";
 
-const DivemasterPage = () => {
+const OpenWaterPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
@@ -15,22 +15,22 @@ const DivemasterPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge variant="secondary" className="mb-4">
-                Professional Course
+                Beginner Course
               </Badge>
               <h1 className="text-5xl font-bold text-ocean-900 mb-6">
-                PADI Divemaster
+                PADI Open Water Diver
               </h1>
               <p className="text-xl text-ocean-700 mb-8">
-                Become a diving professional and start your career in the diving industry
+                Start your diving adventure! Get certified to dive up to 40 meters anywhere in the world
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-ocean-600" />
-                  <span className="text-ocean-700">Duration: 2-6 weeks</span>
+                  <span className="text-ocean-700">Duration: 3 days</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Waves className="w-5 h-5 text-ocean-600" />
-                  <span className="text-ocean-700">Max depth: 40m</span>
+                  <span className="text-ocean-700">Max depth: 18-40m</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Users className="w-5 h-5 text-ocean-600" />
@@ -63,23 +63,27 @@ const DivemasterPage = () => {
                     <ul className="space-y-3">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Leadership training and team management</span>
+                        <span>Essential diving equipment and how to use it</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Teaching assistance and student supervision</span>
+                        <span>Dive safety skills and emergency procedures</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Dive guide skills and site management</span>
+                        <span>Underwater breathing techniques</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Professional certification preparation</span>
+                        <span>Buoyancy control and body positioning</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Emergency response and safety procedures</span>
+                        <span>Buddy system and communication underwater</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        <span>Dive planning and navigation basics</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -93,23 +97,27 @@ const DivemasterPage = () => {
                     <ul className="space-y-3">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Comprehensive leadership training</span>
+                        <span>3 days of instruction (classroom & pool)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Teaching assistance experience</span>
+                        <span>4 open water dives</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Dive guide certification skills</span>
+                        <span>All diving equipment provided</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Professional PADI certification</span>
+                        <span>PADI Open Water Diver certification card</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span>Unlimited diving during the course</span>
+                        <span>Digital training materials and log book</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                        <span>Dive boat and dive master guidance</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -120,23 +128,38 @@ const DivemasterPage = () => {
                 <CardHeader>
                   <CardTitle>Prerequisites</CardTitle>
                   <CardDescription>
-                    To enroll in the PADI Divemaster course, you must meet the following requirements:
+                    To enroll in the PADI Open Water Diver course, you must meet the following requirements:
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>• Be at least 18 years old</li>
-                    <li>• Hold a PADI Rescue Diver certification or equivalent</li>
-                    <li>• Have logged at least 60 dives</li>
+                    <li>• Be at least 10 years old (Junior certification available)</li>
+                    <li>• Be comfortable in water</li>
+                    <li>• Able to swim 200 meters non-stop or 300 meters with fins</li>
                     <li>• Complete a medical questionnaire</li>
-                    <li>• Demonstrate good physical fitness for diving</li>
+                    <li>• No serious health conditions that could affect diving</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-8 bg-blue-50 border-blue-200">
+                <CardHeader>
+                  <CardTitle className="text-blue-900">Why Choose Bali for Your Certification?</CardTitle>
+                </CardHeader>
+                <CardContent className="text-blue-800">
+                  <ul className="space-y-2">
+                    <li>• Warm, tropical waters perfect for learning</li>
+                    <li>• Diverse marine life and vibrant coral reefs</li>
+                    <li>• Excellent visibility (15-25m average)</li>
+                    <li>• Multiple dive sites suitable for beginners</li>
+                    <li>• Affordable prices with expert instruction</li>
                   </ul>
                 </CardContent>
               </Card>
 
               <div className="text-center">
                 <Button size="lg" className="bg-ocean-600 hover:bg-ocean-700">
-                  Contact Us to Enroll
+                  Book Your Open Water Course
                 </Button>
               </div>
             </div>
@@ -148,4 +171,4 @@ const DivemasterPage = () => {
   );
 };
 
-export default DivemasterPage;
+export default OpenWaterPage;
