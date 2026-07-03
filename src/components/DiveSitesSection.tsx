@@ -4,45 +4,45 @@ import { Badge } from "@/components/ui/badge";
 const DiveSitesSection = () => {
   const diveSites = [
     {
-      name: "Sail Rock",
+      name: "Manta Point",
       difficulty: "Advanced",
-      depth: "8-40m",
-      highlights: ["Whale sharks", "Bull sharks", "Vertical swim-through"],
-      image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      depth: "12-25m",
+      highlights: ["Manta rays", "Cleaning stations", "Strong currents"],
+      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      name: "Chumphon Pinnacle",
-      difficulty: "Intermediate",
-      depth: "14-32m",
-      highlights: ["Barracudas", "Trevally", "Coral gardens"],
-      image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      name: "Crystal Bay",
+      difficulty: "Advanced",
+      depth: "10-30m",
+      highlights: ["Mola mola", "Tropical fish", "Deep reef"],
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      name: "Southwest Pinnacle",
+      name: "Blue Corner",
       difficulty: "Intermediate",
-      depth: "14-33m",
-      highlights: ["Whale sharks", "Giant groupers", "Coral formations"],
+      depth: "15-40m",
+      highlights: ["Sharks", "Tuna", "Steep wall"],
       image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      name: "Shark Island",
-      difficulty: "Beginner",
-      depth: "5-18m",
-      highlights: ["Reef sharks", "Moray eels", "Easy diving"],
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+      name: "Toyapakeh",
+      difficulty: "Intermediate",
+      depth: "8-30m",
+      highlights: ["Coral gardens", "Macro life", "Shark sightings"],
+      image: "https://images.unsplash.com/photo-1493558103817-58b2924bce98?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      name: "White Rock",
-      difficulty: "Beginner",
-      depth: "8-22m",
-      highlights: ["Coral gardens", "Tropical fish", "Photography"],
+      name: "Nusa Lembongan Wall",
+      difficulty: "Intermediate",
+      depth: "12-30m",
+      highlights: ["Dramatic drop-offs", "Reef sharks", "Large pelagics"],
       image: "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      name: "Green Rock",
+      name: "Coral Garden",
       difficulty: "Beginner",
-      depth: "6-18m",
-      highlights: ["Sea turtles", "Angelfish", "Butterflyfish"],
+      depth: "5-18m",
+      highlights: ["Sea turtles", "Clownfish", "Colorful reefs"],
       image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];

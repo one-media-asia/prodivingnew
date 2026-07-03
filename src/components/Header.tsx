@@ -66,8 +66,8 @@ const Header = () => {
           {/* Logo */}
           <button onClick={() => handleNavClick('#home')} className="flex items-center">
             <img 
-              src="https://divinginasia.com/images/logo.avif" 
-              alt="Pro Diving Logo" 
+              src="https://api.divinginasia.com/images/logo.png" 
+              alt="Indo Pro Careers Logo" 
               className="h-16 w-auto"
             />
           </button>

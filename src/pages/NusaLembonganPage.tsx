@@ -21,7 +21,7 @@ const NusaLembonganPage = () => {
                 Nusa Lembongan
               </h1>
               <p className="text-xl text-ocean-700 mb-8">
-                Discover vibrant reefs, friendly sharks, and an incredible variety of marine life in this tropical paradise
+                Nusa Lembongan is just 30 minutes by boat from mainland Bali, and is where you can dive with the mantas and mola-mola that made Bali famous.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 flex-wrap">
                 <div className="flex items-center gap-2">
@@ -116,6 +116,17 @@ const NusaLembonganPage = () => {
                   </CardContent>
                 </Card>
               </div>
+
+              <Card className="mb-8 bg-slate-50 border-slate-200">
+                <CardHeader>
+                  <CardTitle>Bali Dive Careers Training</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-slate-800">
+                    Join our Bali team led by Kazi, PADI Course Director. We offer professional dive programs on Nusa Lembongan including Divemaster Internships, Instructor Courses, MSDT specialties, and Staff Instructor training.
+                  </p>
+                </CardContent>
+              </Card>
 
               <Card className="mb-8">
                 <CardHeader>

@@ -2,26 +2,24 @@ import { Award, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const instructors = [
- 
-   {
+  {
     name: "Bas",
     title: "Course Director",
-    specialties: ["No 1 Course Director in Asia", "Advanced Womanizer", "Rescue"],
-    experience: "15+ Years",
-  },
-   {
-    name: "M. Soworka",
-    title: "Course Director",
-    specialties: ["Drinking", "Drinking", "Drinking"],
+    specialties: ["PADI Course Director", "Instructor Training", "Rescue Diving"],
     experience: "15+ Years",
   },
   {
-    name: "Mr. Peter",
+    name: "Adi",
+    title: "Senior PADI Instructor",
+    specialties: ["Divemaster Internships", "Instructor Development", "Nitrox"],
+    experience: "12+ Years",
+  },
+  {
+    name: "Peter",
     title: "PADI Instructor",
     specialties: ["Technical Diving", "Deep Dives", "Night Dives"],
     experience: "14+ Years",
   },
- 
 ];
 
 const InstructorsSection = () => {

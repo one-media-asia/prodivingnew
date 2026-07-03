@@ -21,7 +21,7 @@ const NusaPenidaPage = () => {
                 Nusa Penida
               </h1>
               <p className="text-xl text-ocean-700 mb-8">
-                Experience the thrill of diving with majestic manta rays and explore one of Indonesia's most spectacular underwater destinations
+                Experience the thrill of diving with majestic manta rays and explore one of Bali's most spectacular underwater destinations. Nusa Penida is famous for manta ray cleaning stations and dramatic wall dives.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 flex-wrap">
                 <div className="flex items-center gap-2">
@@ -152,12 +152,21 @@ const NusaPenidaPage = () => {
                 </CardHeader>
                 <CardContent className="text-blue-800">
                   <ul className="space-y-2">
-                    <li>• <strong>Manta Ray Capital:</strong> Highest concentration of manta rays in Indonesia</li>
-                    <li>• <strong>Unique Encounters:</strong> Consistent pelagic and large fish sightings</li>
-                    <li>• <strong>Pristine Reefs:</strong> Some of Bali's healthiest coral ecosystems</li>
-                    <li>• <strong>Adventure Diving:</strong> Challenging conditions create unforgettable experiences</li>
-                    <li>• <strong>World-Class Destination:</strong> Featured in top diving publications worldwide</li>
+                    <li>• <strong>Manta Ray Capital:</strong> Highest concentration of manta rays in Bali</li>
+                    <li>• <strong>Cleaning Stations:</strong> Visit world-famous manta cleaning stations and dramatic surge channels</li>
+                    <li>• <strong>Pelagic Encounters:</strong> Consistent shark, turtle, and ray sightings</li>
+                    <li>• <strong>Bold Currents:</strong> Powerful conditions for advanced divers and unforgettable experiences</li>
+                    <li>• <strong>Iconic Bali Dive Site:</strong> One of the most sought-after dive destinations in Indonesia</li>
                   </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="mb-8 bg-slate-50 border-slate-200">
+                <CardHeader>
+                  <CardTitle>Bali Dive Careers Programs</CardTitle>
+                </CardHeader>
+                <CardContent className="text-slate-800">
+                  <p>We offer Bali-based PADI programs and professional internships designed for divers who want to train and explore the best of Nusa Penida's underwater world.</p>
                 </CardContent>
               </Card>
 

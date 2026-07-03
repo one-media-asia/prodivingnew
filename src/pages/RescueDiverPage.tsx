@@ -34,7 +34,7 @@ const RescueDiverPage = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Users className="w-5 h-5 text-ocean-600" />
-                  <span className="text-ocean-700">฿14,500 per person</span>
+                  <span className="text-ocean-700">Contact us for Bali pricing</span>
                 </div>
               </div>
               <Button size="lg" className="bg-ocean-600 hover:bg-ocean-700">

@@ -1,0 +1,12 @@
+<svg width="240" height="64" viewBox="0 0 240 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B3D91" />
+      <stop offset="100%" stop-color="#17A2CF" />
+    </linearGradient>
+  </defs>
+  <rect width="240" height="64" rx="14" fill="#031E43" />
+  <path d="M24 18H34L42 42H46L54 18H64L56 46H52L44 22H42L34 46H30L24 18Z" fill="url(#grad)" />
+  <text x="74" y="35" fill="#F9FAFB" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Indo Pro</text>
+  <text x="74" y="52" fill="#A5F3FC" font-family="Inter, Arial, sans-serif" font-size="14">Careers</text>
+</svg>

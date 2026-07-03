@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "Do you provide accommodation during the courses?",
-    answer: "Yes! We offer comfortable accommodation options for our course participants. Air conditioning is available for an additional 300 THB per night. Contact us for current availability and package deals that include lodging with your course.",
+    answer: "Yes! We offer comfortable accommodation options for our course participants. Contact us for current availability and package deals that include lodging with your course.",
   },
   {
     question: "What equipment do I need to bring?",

@@ -26,17 +26,17 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img 
-                src="https://divinginasia.com/images/logo.avif" 
-                alt="Pro Diving Logo" 
+                src="https://api.divinginasia.com/images/logo.png" 
+                alt="Indo Pro Careers Logo" 
                 className="h-16 w-auto"
               />
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed mb-4">
-              Your gateway to underwater adventures and tropical relaxation in beautiful Koh Tao, Thailand.
+              Your gateway to underwater adventures and tropical relaxation in beautiful Bali, Indonesia.
             </p>
             <div className="flex items-center gap-2 text-primary-foreground/80 text-sm">
               <MapPin className="w-4 h-4" />
-              Koh Tao, Thailand
+              Bali, Indonesia
             </div>
           </div>
 
@@ -119,10 +119,10 @@ const Footer = () => {
         <div className="pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-primary-foreground/70 text-sm">
-              © Copyright One Media Asia | Pro Diving Asia
+              © Copyright Indo Pro Careers | Bali Dive Training
             </p>
             <p className="text-primary-foreground/70 text-sm flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-coral fill-coral" /> in Thailand
+              Made with <Heart className="w-4 h-4 text-coral fill-coral" /> in Bali, Indonesia
             </p>
           </div>
         </div>
