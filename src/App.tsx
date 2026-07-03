@@ -8,6 +8,7 @@ import DivemasterPage from "./pages/DivemasterPage";
 import InstructorPage from "./pages/InstructorPage";
 import AssistantInstructorPage from "./pages/AssistantInstructorPage";
 import IDCStaffPage from "./pages/IDCStaffPage";
+import IDCSchedulePage from "./pages/IDCSchedulePage";
 import TechnicalDivingPage from "./pages/TechnicalDivingPage";
 import OpenWaterPage from "./pages/OpenWaterPage";
 import AdvancedOpenWaterPage from "./pages/AdvancedOpenWaterPage";
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/divemaster" element={<DivemasterPage />} />
           <Route path="/assistant-instructor" element={<AssistantInstructorPage />} />
           <Route path="/instructor" element={<InstructorPage />} />
+          <Route path="/idc-schedule" element={<IDCSchedulePage />} />
           <Route path="/idc-staff" element={<IDCStaffPage />} />
           <Route path="/technical-diving" element={<TechnicalDivingPage />} />
           <Route path="/open-water" element={<OpenWaterPage />} />

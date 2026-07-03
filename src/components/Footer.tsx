@@ -89,7 +89,7 @@ const Footer = () => {
                 bas@prodiving.asia
               </a>
               <a
-                href="https://wa.me/+31638697279"
+                href="https://wa.me/+6281353833289"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors"
@@ -119,10 +119,10 @@ const Footer = () => {
         <div className="pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-primary-foreground/70 text-sm">
-              © Copyright Indo Pro Careers | Bali Dive Training
+              © Copyright Pro Diving | Bali Dive Training
             </p>
             <p className="text-primary-foreground/70 text-sm flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-coral fill-coral" /> in Bali, Indonesia
+              Powered By One Media Asia in Bali, Indonesia
             </p>
           </div>
         </div>
