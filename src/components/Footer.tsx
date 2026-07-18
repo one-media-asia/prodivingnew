@@ -119,7 +119,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-primary-foreground/70 text-sm">
-              © Copyright Pro Diving | Bali Dive Training
+              © 2026 Copyright Pro Diving | Bali Dive Training
             </p>
             <p className="text-primary-foreground/70 text-sm flex items-center gap-1">
               Powered By One Media Asia in Bali, Indonesia
