@@ -23,15 +23,18 @@ const ContactSection = () => {
     setFeedback("");
     setError("");
 
+    if (!wordpressBookingApiKey) {
+      setError("Booking API key not configured. Add VITE_WORDPRESS_BOOKING_API_KEY to .env.");
+      setIsLoading(false);
+      return;
+    }
+
     try {
       const headers: Record<string, string> = {
         "Content-Type": "application/json",
         Accept: "application/json",
+        "X-API-Key": wordpressBookingApiKey,
       };
-
-      if (wordpressBookingApiKey) {
-        headers["X-API-Key"] = wordpressBookingApiKey;
-      }
 
       const response = await fetch(wordpressBookingUrl, {
         method: "POST",
@@ -47,7 +50,10 @@ const ContactSection = () => {
       const success = response.ok && (result?.success === true || result?.status === "success" || result?.data);
 
       if (!success) {
-        const message = result?.message || result?.error || "Unable to send your message.";
+        let message = result?.message || result?.error || "Unable to send your message.";
+        if (response.status === 403) {
+          message = "WordPress booking API key rejected. Verify VITE_WORDPRESS_BOOKING_API_KEY.";
+        }
         throw new Error(message);
       }
 
