@@ -35,8 +35,6 @@ const ContactSection = () => {
         throw new Error("Web3Forms access key is not configured.");
       }
 
-      window.open(bookingUrl, "_blank", "noopener,noreferrer");
-
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -58,12 +56,13 @@ const ContactSection = () => {
       if (!response.ok || result.success !== true) {
         throw new Error(result.message || "Web3Forms submission failed.");
       }
-      
-      setSuccessMessage("Message sent successfully and the booking page has been opened.");
+
+      setSuccessMessage("Message sent successfully. Redirecting you back home...");
       setFormData({ name: "", email: "", message: "" });
-      
-      // Clear success message after 5 seconds
-      setTimeout(() => setSuccessMessage(""), 5000);
+
+      setTimeout(() => {
+        window.location.assign("/");
+      }, 1800);
       setIsLoading(false);
     } catch (error) {
       console.error("Web3Forms failed:", error);
