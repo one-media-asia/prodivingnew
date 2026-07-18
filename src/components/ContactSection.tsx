@@ -1,6 +1,7 @@
 import { Mail, MapPin, Clock, Facebook, Instagram, MessageCircle } from "lucide-react";
 
-const wordpressContactFormUrl = import.meta.env.VITE_WORDPRESS_CONTACT_FORM_URL || "";
+const wordpressContactFormUrl = import.meta.env.VITE_WORDPRESS_CONTACT_FORM_URL || "https://www.prodiving.asia/contact-us/";
+const bookingPortalUrl = "https://admin.prodiving.asia/";
 
 const ContactSection = () => {
   return (
@@ -87,22 +88,35 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-border bg-background/80 p-4 shadow-card">
-            <h3 className="font-heading font-bold text-foreground mb-3">WordPress Contact Form</h3>
-            {wordpressContactFormUrl ? (
-              <div className="overflow-hidden rounded-xl border bg-white">
-                <iframe
-                  src={wordpressContactFormUrl}
-                  title="WordPress contact form"
-                  className="min-h-[560px] w-full border-0"
-                  loading="lazy"
-                />
-              </div>
-            ) : (
-              <div className="rounded-xl border border-dashed border-muted-foreground/30 bg-muted/30 p-6 text-center text-sm text-muted-foreground">
-                Add your WordPress contact page URL in the environment as VITE_WORDPRESS_CONTACT_FORM_URL.
-              </div>
-            )}
+          <div className="rounded-2xl border border-border bg-background/80 p-6 shadow-card">
+            <h3 className="font-heading font-bold text-foreground mb-3">Contact options</h3>
+            <p className="mb-4 text-sm text-muted-foreground">
+              The embedded WordPress form is not loading reliably on this domain, so we’re offering direct ways to reach us.
+            </p>
+            <div className="space-y-3">
+              <a
+                href={wordpressContactFormUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+              >
+                Open WordPress contact page
+              </a>
+              <a
+                href="mailto:bas@prodiving.asia"
+                className="flex items-center justify-center rounded-lg border border-border px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
+              >
+                Email bas@prodiving.asia
+              </a>
+              <a
+                href={bookingPortalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center rounded-lg border border-border px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
+              >
+                Open booking portal
+              </a>
+            </div>
           </div>
         </div>
       </div>
