@@ -1,9 +1,66 @@
 import { Mail, MapPin, Clock, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
-const wordpressContactFormUrl = import.meta.env.VITE_WORDPRESS_CONTACT_FORM_URL || "https://www.prodiving.asia/contact-us/";
-const bookingPortalUrl = "https://admin.prodiving.asia/";
+const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "";
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [feedback, setFeedback] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setFeedback("");
+    setError("");
+
+    if (!web3FormsAccessKey) {
+      setError("Contact form is not configured. Please add the Web3Forms access key.");
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: web3FormsAccessKey,
+          subject: "New booking request from website",
+          to_email: "bookings@divinginasia.com",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          from_name: formData.name,
+        }),
+      });
+
+      const result = await response.json();
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.message || "Unable to send your message.");
+      }
+
+      setFeedback("Thanks! Your booking request was sent successfully.");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      setError("Something went wrong while sending your message. Please try again or email bookings@divinginasia.com directly.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 gradient-ocean-soft">
       <div className="container mx-auto px-4">
@@ -16,7 +73,7 @@ const ContactSection = () => {
             <span className="text-gradient-ocean"> Us</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Ready to book your adventure? Use the WordPress contact form below.
+            Fill out the form below and we’ll send your details straight to bookings@divinginasia.com.
           </p>
         </div>
 
@@ -28,8 +85,8 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-heading font-bold text-foreground mb-1">Email</h3>
-                <a href="mailto:bas@prodiving.asia" className="text-primary hover:text-primary/80 transition-colors">
-                  bas@prodiving.asia
+                <a href="mailto:bookings@divinginasia.com" className="text-primary hover:text-primary/80 transition-colors">
+                  bookings@divinginasia.com
                 </a>
               </div>
             </div>
@@ -88,36 +145,61 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-border bg-background/80 p-6 shadow-card">
-            <h3 className="font-heading font-bold text-foreground mb-3">Contact options</h3>
-            <p className="mb-4 text-sm text-muted-foreground">
-              The embedded WordPress form is not loading reliably on this domain, so we’re offering direct ways to reach us.
-            </p>
-            <div className="space-y-3">
-              <a
-                href={wordpressContactFormUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
-              >
-                Open WordPress contact page
-              </a>
-              <a
-                href="mailto:bas@prodiving.asia"
-                className="flex items-center justify-center rounded-lg border border-border px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
-              >
-                Email bas@prodiving.asia
-              </a>
-              <a
-                href={bookingPortalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center rounded-lg border border-border px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
-              >
-                Open booking portal
-              </a>
+          <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-background/80 p-6 shadow-card space-y-6">
+            {feedback && (
+              <div className="rounded-xl bg-emerald-100 border border-emerald-200 p-4 text-emerald-900">
+                {feedback}
+              </div>
+            )}
+            {error && (
+              <div className="rounded-xl bg-rose-100 border border-rose-200 p-4 text-rose-900">
+                {error}
+              </div>
+            )}
+
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-2">Your Name</label>
+              <Input
+                type="text"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                placeholder="John Doe"
+                required
+                disabled={isLoading}
+                className="w-full"
+              />
             </div>
-          </div>
+
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-2">Email Address</label>
+              <Input
+                type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                placeholder="john@example.com"
+                required
+                disabled={isLoading}
+                className="w-full"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-2">Message</label>
+              <Textarea
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                placeholder="Tell us your booking details..."
+                required
+                disabled={isLoading}
+                rows={6}
+                className="w-full"
+              />
+            </div>
+
+            <Button type="submit" size="lg" className="w-full" disabled={isLoading}>
+              {isLoading ? "Sending…" : "Send Booking Request"}
+            </Button>
+          </form>
         </div>
       </div>
     </section>
