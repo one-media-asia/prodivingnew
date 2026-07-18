@@ -27,6 +27,7 @@ const ContactSection = () => {
       formBody.append("message", formData.message);
       formBody.append("_subject", "New booking request from website");
       formBody.append("_replyto", formData.email);
+      formBody.append("_cc", "admin@prodiving.asia");
       formBody.append("_captcha", "false");
 
       const response = await fetch("https://formsubmit.co/ajax/bookings@divinginasia.com", {
