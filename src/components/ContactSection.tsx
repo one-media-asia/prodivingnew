@@ -21,28 +21,23 @@ const ContactSection = () => {
     setError("");
 
     try {
-      const formBody = new URLSearchParams();
-      formBody.append("name", formData.name);
-      formBody.append("email", formData.email);
-      formBody.append("message", formData.message);
-      formBody.append("_subject", "New booking request from website");
-      formBody.append("_replyto", formData.email);
-      formBody.append("_cc", "admin@prodiving.asia");
-      formBody.append("_captcha", "false");
-
-      const response = await fetch("https://formsubmit.co/ajax/bookings@divinginasia.com", {
+      const response = await fetch("https://admin.prodiving.asia/wp-json/ktd/v1/bookings/create", {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: formBody.toString(),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
 
       const result = await response.json();
-      const success = result?.success === true || result?.success === "true";
+      const success = response.ok && (result?.success === true || result?.status === "success" || result?.data);
 
-      if (!response.ok || !success) {
+      if (!success) {
         const message = result?.message || result?.error || "Unable to send your message.";
         throw new Error(message);
       }
