@@ -11,10 +11,9 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 
-// Initialize EmailJS
-emailjs.init("lPmDz0peiFD5rZv0L");
+const bookingUrl = "https://admin.prodiving.asia/";
+const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -32,25 +31,42 @@ const ContactSection = () => {
     setIsLoading(true);
 
     try {
-      await emailjs.send(
-        "service_s5w9n1n",
-        "template_1dhiaga",
-        {
-          from_name: formData.name,
-          from_email: formData.email,
+      if (!web3FormsAccessKey) {
+        throw new Error("Web3Forms access key is not configured.");
+      }
+
+      window.open(bookingUrl, "_blank", "noopener,noreferrer");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: web3FormsAccessKey,
+          name: formData.name,
+          email: formData.email,
           message: formData.message,
-          to_email: "bas@prodiving.asia",
-        }
-      );
+          subject: `Contact Form: ${formData.name}`,
+          from_name: formData.name,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.message || "Web3Forms submission failed.");
+      }
       
-      setSuccessMessage("Message sent successfully! We'll get back to you soon.");
+      setSuccessMessage("Message sent successfully and the booking page has been opened.");
       setFormData({ name: "", email: "", message: "" });
       
       // Clear success message after 5 seconds
       setTimeout(() => setSuccessMessage(""), 5000);
       setIsLoading(false);
     } catch (error) {
-      console.error("EmailJS failed:", error);
+      console.error("Web3Forms failed:", error);
       setIsLoading(false);
       // Show fallback dialog with manual options
       setIsFallbackOpen(true);
@@ -239,7 +255,7 @@ const ContactSection = () => {
               disabled={isLoading}
               className="w-full bg-primary hover:bg-primary/90 font-heading font-semibold"
             >
-              {isLoading ? "Sending..." : "Send Message"}
+              {isLoading ? "Sending..." : "Send Message & Open Booking"}
             </Button>
           </form>
 
