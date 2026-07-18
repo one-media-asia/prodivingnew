@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-const web3FormsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "";
-
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -22,40 +20,38 @@ const ContactSection = () => {
     setFeedback("");
     setError("");
 
-    if (!web3FormsAccessKey) {
-      setError("Contact form is not configured. Please add the Web3Forms access key.");
-      setIsLoading(false);
-      return;
-    }
-
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const formBody = new URLSearchParams();
+      formBody.append("name", formData.name);
+      formBody.append("email", formData.email);
+      formBody.append("message", formData.message);
+      formBody.append("_subject", "New booking request from website");
+      formBody.append("_replyto", formData.email);
+      formBody.append("_captcha", "false");
+
+      const response = await fetch("https://formsubmit.co/ajax/bookings@divinginasia.com", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
           Accept: "application/json",
         },
-        body: JSON.stringify({
-          access_key: web3FormsAccessKey,
-          subject: "New booking request from website",
-          to_email: "bookings@divinginasia.com",
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          from_name: formData.name,
-        }),
+        body: formBody.toString(),
       });
 
       const result = await response.json();
-      if (!response.ok || result.success !== true) {
-        throw new Error(result.message || "Unable to send your message.");
+      const success = result?.success === true || result?.success === "true";
+
+      if (!response.ok || !success) {
+        const message = result?.message || result?.error || "Unable to send your message.";
+        throw new Error(message);
       }
 
       setFeedback("Thanks! Your booking request was sent successfully.");
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
       console.error(err);
-      setError("Something went wrong while sending your message. Please try again or email bookings@divinginasia.com directly.");
+      const message = err instanceof Error ? err.message : "Something went wrong while sending your message.";
+      setError(`${message} Please try again or email bookings@divinginasia.com directly.`);
     } finally {
       setIsLoading(false);
     }
