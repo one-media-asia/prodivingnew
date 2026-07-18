@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
+const wordpressBookingApiKey = import.meta.env.VITE_WORDPRESS_BOOKING_API_KEY || "";
+const wordpressBookingUrl = "https://admin.prodiving.asia/wp-json/ktd/v1/bookings/create";
+
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -21,12 +24,18 @@ const ContactSection = () => {
     setError("");
 
     try {
-      const response = await fetch("https://admin.prodiving.asia/wp-json/ktd/v1/bookings/create", {
+      const headers: Record<string, string> = {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      };
+
+      if (wordpressBookingApiKey) {
+        headers["X-API-Key"] = wordpressBookingApiKey;
+      }
+
+      const response = await fetch(wordpressBookingUrl, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
+        headers,
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
