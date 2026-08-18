@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-const wordpressBookingApiKey = import.meta.env.VITE_WORDPRESS_BOOKING_API_KEY || "";
-const wordpressBookingUrl = "https://admin.prodiving.asia/wp-json/ktd/v1/bookings/create";
+const web3formsAccessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "";
+const web3formsUrl = "https://api.web3forms.com/submit";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -23,37 +23,34 @@ const ContactSection = () => {
     setFeedback("");
     setError("");
 
-    if (!wordpressBookingApiKey) {
-      setError("Booking API key not configured. Add VITE_WORDPRESS_BOOKING_API_KEY to .env.");
+    if (!web3formsAccessKey) {
+      setError("Booking form is not configured. Add VITE_WEB3FORMS_ACCESS_KEY to .env.");
       setIsLoading(false);
       return;
     }
 
     try {
-      const headers: Record<string, string> = {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "X-API-Key": wordpressBookingApiKey,
-      };
-
-      const response = await fetch(wordpressBookingUrl, {
+      const response = await fetch(web3formsUrl, {
         method: "POST",
-        headers,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
+          access_key: web3formsAccessKey,
           name: formData.name,
           email: formData.email,
           message: formData.message,
+          subject: "Booking request from Pro Diving Asia website",
+          from_name: "Pro Diving Asia Website",
         }),
       });
 
-      const result = await response.json();
-      const success = response.ok && (result?.success === true || result?.status === "success" || result?.data);
+      const result = await response.json().catch(() => ({}));
+      const success = response.ok && (result?.success === true || result?.success === "true" || result?.message || result?.result === "success");
 
       if (!success) {
-        let message = result?.message || result?.error || "Unable to send your message.";
-        if (response.status === 403) {
-          message = "WordPress booking API key rejected. Verify VITE_WORDPRESS_BOOKING_API_KEY.";
-        }
+        const message = result?.message || result?.error || "Unable to send your message.";
         throw new Error(message);
       }
 
