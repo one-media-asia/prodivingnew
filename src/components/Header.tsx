@@ -13,6 +13,11 @@ const Header = () => {
     // Always scroll to top when navigating
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
+    if (href.startsWith('http')) {
+      window.open(href, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
     if (href.startsWith('/')) {
       navigate(href);
     } else if (href.startsWith('#')) {
@@ -33,6 +38,11 @@ const Header = () => {
     { href: "#dive-sites", label: "Dive Sites" },
     { href: "#gallery", label: "Gallery" },
     { href: "#contact", label: "Contact" },
+  ];
+
+  const locationOptions = [
+    { name: 'Thailand', href: 'https://divinginasia.com' },
+    { name: 'Philippines', href: 'https://bohol.divinginasia.com' },
   ];
 
   const courseCategories = [
@@ -121,6 +131,29 @@ const Header = () => {
             >
               Dive Sites
             </button>
+
+            <div className="relative group">
+              <button
+                className="text-primary-foreground/90 hover:text-primary-foreground font-medium text-sm uppercase tracking-wide transition-colors duration-200 flex items-center gap-1"
+              >
+                Locations
+                <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
+              </button>
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="bg-[#0b1e3d] rounded-lg shadow-2xl border border-[#1a3a5c] min-w-[180px] p-3">
+                  {locationOptions.map((item) => (
+                    <button
+                      key={item.href}
+                      onClick={() => handleNavClick(item.href)}
+                      className="block w-full text-left py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md uppercase tracking-wide transition-colors"
+                    >
+                      {item.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             <button
               onClick={() => handleNavClick('#gallery')}
               className="text-primary-foreground/90 hover:text-primary-foreground font-medium text-sm uppercase tracking-wide transition-colors duration-200"
@@ -202,6 +235,24 @@ const Header = () => {
             >
               Dive Sites
             </button>
+
+            <div>
+              <div className="flex items-center justify-between w-full text-primary-foreground/90 hover:text-primary-foreground font-medium text-sm uppercase tracking-wide transition-colors text-left">
+                Locations
+              </div>
+              <div className="pl-4 mt-2 space-y-1 bg-primary-foreground/5 rounded-lg py-2">
+                {locationOptions.map((item) => (
+                  <button
+                    key={item.href}
+                    onClick={() => handleNavClick(item.href)}
+                    className="block px-3 py-1.5 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors text-left w-full"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <button
               onClick={() => handleNavClick('#gallery')}
               className="text-primary-foreground/90 hover:text-primary-foreground font-medium text-sm uppercase tracking-wide transition-colors text-left"
