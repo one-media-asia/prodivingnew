@@ -21,6 +21,7 @@ import FreedivingPage from "./pages/FreedivingPage";
 import NusaPenidaPage from "./pages/NusaPenidaPage";
 import NusaLembonganPage from "./pages/NusaLembonganPage";
 import NotFound from "./pages/NotFound";
+import { initGA, Analytics } from "./lib/analytics";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        {/* initialize analytics once */}
+        {initGA()}
+        <Analytics />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/divemaster" element={<DivemasterPage />} />
