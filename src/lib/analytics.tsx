@@ -7,6 +7,9 @@ const GA_ID = import.meta.env.VITE_GA_ID || "G-DJBJE1TBX0";
 export function initGA() {
   try {
     ReactGA.initialize(GA_ID);
+    // temporary debug log to confirm analytics bundle loaded in production
+    // eslint-disable-next-line no-console
+    console.log('initGA', GA_ID);
   } catch (e) {
     // silent fail in environments where window isn't available
     // eslint-disable-next-line no-console
